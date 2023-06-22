@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react'
-import TextInput from '../components/UIkit/TextInput'
+import {PrimaryButton, TextInput} from '../components/UIkit'
 
 const SignUp = () => {
     const [username, setUsername] = useState("")
@@ -26,20 +26,27 @@ const SignUp = () => {
             <div className="module-spacer--medium"/>
             <TextInput
                 fullWidth={true} label={"ユーザー名"} multiline={false} required={true}
-                rows={1} value={username} tyep={"text"} onChange={inputUsername}
+                row={1} value={username} tyep={"text"} onChange={inputUsername}
             />
             <TextInput
                 fullWidth={true} label={"メールアドレス"} multiline={false} required={true}
-                rows={1} value={email} tyep={"email"} onChange={inputEmail}
+                row={1} value={email} tyep={"email"} onChange={inputEmail}
             />
             <TextInput
                 fullWidth={true} label={"パスワード"} multiline={false} required={true}
-                rows={1} value={password} tyep={"password"} onChange={inputPassword}
+                row={1} value={password} tyep={"password"} onChange={inputPassword}
             />
             <TextInput
                 fullWidth={true} label={"パスワード（確認）"} multiline={false} required={true}
-                rows={1} value={confirmPassword} tyep={"password"} onChange={inputConfirmPassword}
+                row={1} value={confirmPassword} tyep={"password"} onChange={inputConfirmPassword}
             />
+            <div className="module-spacer--medium"/>
+            <div className="center">
+                <PrimaryButton
+                    label={"アカウントを登録する"}
+                    onClick={() => console.log("Clicked!")}
+                />
+            </div>
         </div>
     )
 }
