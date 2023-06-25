@@ -20,7 +20,7 @@ const Reset = () => {
 
             <TextInput
                 fullWidth={true} label={"メールアドレス"} multiline={false} required={true}
-                row={1} value={email} type={"email"} onChange={inputEmail}
+                minRows={1} value={email} type={"email"} onChange={inputEmail}
             />
             <div className="module-spacer--medium"/>
             <div className="center">

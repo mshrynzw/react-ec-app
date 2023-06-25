@@ -24,11 +24,11 @@ const SignIn = () => {
 
             <TextInput
                 fullWidth={true} label={"メールアドレス"} multiline={false} required={true}
-                row={1} value={email} type={"email"} onChange={inputEmail}
+                minRows={1} value={email} type={"email"} onChange={inputEmail}
             />
             <TextInput
                 fullWidth={true} label={"パスワード"} multiline={false} required={true}
-                row={1} value={password} type={"password"} onChange={inputPassword}
+                minRows={1} value={password} type={"password"} onChange={inputPassword}
             />
             <div className="module-spacer--medium"/>
             <div className="center">
