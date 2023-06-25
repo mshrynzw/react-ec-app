@@ -30,19 +30,19 @@ const SignUp = () => {
             <div className="module-spacer--medium"/>
             <TextInput
                 fullWidth={true} label={"ユーザー名"} multiline={false} required={true}
-                row={1} value={username} tyep={"text"} onChange={inputUsername}
+                row={1} value={username} type={"text"} onChange={inputUsername}
             />
             <TextInput
                 fullWidth={true} label={"メールアドレス"} multiline={false} required={true}
-                row={1} value={email} tyep={"email"} onChange={inputEmail}
+                row={1} value={email} type={"email"} onChange={inputEmail}
             />
             <TextInput
                 fullWidth={true} label={"パスワード"} multiline={false} required={true}
-                row={1} value={password} tyep={"password"} onChange={inputPassword}
+                row={1} value={password} type={"password"} onChange={inputPassword}
             />
             <TextInput
                 fullWidth={true} label={"パスワード（確認）"} multiline={false} required={true}
-                row={1} value={confirmPassword} tyep={"password"} onChange={inputConfirmPassword}
+                row={1} value={confirmPassword} type={"password"} onChange={inputConfirmPassword}
             />
             <div className="module-spacer--medium"/>
             <div className="center">
