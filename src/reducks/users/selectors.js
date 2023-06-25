@@ -1,6 +1,11 @@
-import {createSelector} from "reselect";
+import {createSelector} from "reselect"
 
-const userSelector=(state)=>state.users
+const userSelector = (state) => state.users
+
+export const getIsSighedIn = createSelector(
+    [userSelector],
+    state => state.isSignedIn
+)
 
 export const getUserId = createSelector(
     [userSelector],
