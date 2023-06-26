@@ -1,18 +1,8 @@
 import {createSelector} from "reselect"
 
-const userSelector = (state) => state.users
+const productSelector = (state) => state.products
 
-export const getIsSighedIn = createSelector(
-    [userSelector],
-    state => state.isSignedIn
-)
-
-export const getUserId = createSelector(
-    [userSelector],
-    state => state.uid
-)
-
-export const getUserName = createSelector(
-    [userSelector],
-    state => state.username
+export const getProducts = createSelector(
+    [productSelector],
+    state => state.list
 )
