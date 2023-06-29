@@ -55,8 +55,8 @@ const OrderConfirm = () => {
                 </div>
                 <div className={classes.orderBox}>
                     <TextDetail label={"商品合計"} value={`￥${subtotal.toLocaleString()}`}/>
-                    <TextDetail label={"送料"} value={`￥${shippingFee.toLocaleString()}`}/>
                     <TextDetail label={"消費税"} value={`￥${tax.toLocaleString()}`}/>
+                    <TextDetail label={"送料"} value={`￥${shippingFee.toLocaleString()}`}/>
                     <Divider/>
                     <TextDetail label={"合計（税込）"} value={`￥${total.toLocaleString()}`}/>
                 </div>
