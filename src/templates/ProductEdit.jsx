@@ -13,24 +13,10 @@ const ProductEdit = () => {
         id = id.split('/')[1]
     }
 
-    useEffect(() => {
-        if (id !== "") {
-            db.collection('products').doc(id).get()
-                .then(snapshot => {
-                    const data = snapshot.data()
-                    setCategory(data.category)
-                    setGender(data.gender)
-                    setImages(data.images)
-                    setName(data.name)
-                    setPrice(data.price)
-                    setSizes(data.sizes)
-                })
-        }
-    }, [id])
-
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [category, setCategory] = useState("")
+    const [categories, setCategories] = useState([])
     const [gender, setGender] = useState("")
     const [images, setImages] = useState([])
     const [price, setPrice] = useState("")
@@ -46,17 +32,44 @@ const ProductEdit = () => {
         setPrice(event.target.value)
     }, [setPrice])
 
-    const categories = [
-        {id: "tops", name: "トップス"},
-        {id: "shirts", name: "シャツ"},
-        {id: "pants", name: "パンツ"}
-    ]
-
     const genders = [
         {id: "all", name: "すべて"},
         {id: "male", name: "メンズ"},
         {id: "female", name: "レディース"}
     ]
+
+    useEffect(() => {
+        if (id !== "") {
+            db.collection('products').doc(id).get()
+                .then(snapshot => {
+                    const product = snapshot.data()
+                    setName(product.name)
+                    setDescription(product.description)
+                    setImages(product.images)
+                    setCategory(product.category)
+                    setGender(product.gender)
+                    setPrice(product.price)
+                    setSizes(product.sizes)
+                })
+        }
+    }, [id])
+
+    useEffect(() => {
+        db.collection('categories')
+            .orderBy('order', 'asc')
+            .get()
+            .then(snapshots => {
+                const list = []
+                snapshots.forEach(snapshot => {
+                    const data = snapshot.data()
+                    list.push({
+                        id: data.id,
+                        name: data.name
+                    })
+                })
+                setCategories(list)
+            })
+    }, [])
 
     return (
         <section>
